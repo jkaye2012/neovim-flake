@@ -10,23 +10,18 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { system = system; config.allowUnfree = true; };
+      lib = pkgs.lib;
       inherit (import ./packages { inherit pkgs; }) packagesPath;
       inherit (import ./plugins { inherit pkgs; }) plugins;
+      config = lib.concatMapStrings (x: "luafile ${x}\n") (lib.filesystem.listFilesRecursive ./config);
       neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
-      	customRC = ''
-          luafile ${./config/general.lua}
-          luafile ${./config/status_line.lua}
-          luafile ${./config/lsp.lua}
-          luafile ${./config/completion.lua}
-          luafile ${./config/keybindings.lua}
-          luafile ${./config/theme.lua}
-	'';
-	} // {
-	  viAlias = true;
-	  vimAlias = true;
-          packpathDirs.myNeovimPackages.start = plugins;
-          wrapperArgs = pkgs.lib.escapeShellArgs [ "--suffix" "PATH" ":" "${packagesPath}" ];
-	};
+        customRC = "${config}";
+      } // {
+        viAlias = true;
+        vimAlias = true;
+        packpathDirs.myNeovimPackages.start = plugins;
+        wrapperArgs = pkgs.lib.escapeShellArgs [ "--suffix" "PATH" ":" "${packagesPath}" ];
+      };
     in
     with pkgs; rec {
       packages.${system}  = rec {
