@@ -6,8 +6,10 @@
     lualine-nvim
     melange-nvim
     nvim-lspconfig
+    readline-vim
     rustaceanvim
     telescope-nvim
+    which-key-nvim
 
     cmp-nvim-lsp
     cmp-buffer
