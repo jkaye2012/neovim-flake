@@ -9,6 +9,7 @@
     readline-vim
     rustaceanvim
     telescope-nvim
+    vim-easymotion
     which-key-nvim
 
     cmp-nvim-lsp
@@ -18,6 +19,5 @@
     nvim-cmp
     cmp-vsnip
     vim-vsnip
-
   ];
 }
