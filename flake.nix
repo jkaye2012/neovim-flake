@@ -11,7 +11,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs { system = system; config.allowUnfree = true; };
       lib = pkgs.lib;
-      inherit (import ./packages { inherit pkgs; }) packagesPath;
+      inherit (import ./packages { inherit pkgs; }) vimPackages packagesPath;
       inherit (import ./plugins { inherit pkgs; }) plugins;
       config = lib.concatMapStrings (x: "luafile ${x}\n") (lib.filesystem.listFilesRecursive ./config);
       neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
@@ -36,7 +36,9 @@
         };
         default = jkvim;
       };
-      devShell = mkShell {
+      devShells.${system}.default = mkShell {
+        name = "jkvim";
+        packages = vimPackages;
         buildInputs = [
           packages.${system}.jkvim
         ];

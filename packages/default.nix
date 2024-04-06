@@ -1,7 +1,7 @@
 { pkgs, ... }: with pkgs; rec {
-  packages = [
+  vimPackages = [
     nodejs_21
     tmux
   ];
-  packagesPath = lib.makeBinPath packages;
+  packagesPath = lib.makeBinPath vimPackages;
 }
