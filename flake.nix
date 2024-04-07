@@ -26,7 +26,6 @@
     with pkgs; rec {
       packages.${system}  = rec {
         jkvim = wrapNeovimUnstable neovim-unwrapped neovimConfig;
-        deps = vimPackages;
         default = jkvim;
       };
       apps.${system} = rec {
