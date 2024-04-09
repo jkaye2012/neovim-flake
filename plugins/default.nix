@@ -10,6 +10,7 @@
     rustaceanvim
     telescope-nvim
     vim-easymotion
+    vim-wordmotion
     which-key-nvim
 
     cmp-nvim-lsp
