@@ -5,6 +5,7 @@
     vim-fugitive
     lualine-nvim
     melange-nvim
+    mini-nvim
     nvim-lspconfig
     readline-vim
     rustaceanvim
