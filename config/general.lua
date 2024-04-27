@@ -15,5 +15,4 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
-require("autoclose").setup()
 

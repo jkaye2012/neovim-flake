@@ -1,6 +1,5 @@
 { pkgs, ...}: with pkgs.vimPlugins; rec {
   plugins = [
-    autoclose-nvim
     copilot-vim
     vim-fugitive
     lualine-nvim
