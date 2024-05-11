@@ -11,6 +11,7 @@ vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.clipboard = 'unnamedplus'
 
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
