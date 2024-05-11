@@ -9,6 +9,12 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.html.setup {
+  capabilities = capabilities,
+}
+
 -- Automatically format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
