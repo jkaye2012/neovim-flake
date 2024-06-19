@@ -16,4 +16,4 @@ vim.opt.clipboard = 'unnamedplus'
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
-
+require("oil").setup()

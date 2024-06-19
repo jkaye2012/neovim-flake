@@ -6,6 +6,8 @@
     melange-nvim
     mini-nvim
     nvim-lspconfig
+    nvim-web-devicons
+    oil-nvim
     readline-vim
     rustaceanvim
     telescope-nvim
@@ -13,6 +15,7 @@
     vim-wordmotion
     which-key-nvim
 
+    # Completion
     cmp-nvim-lsp
     cmp-buffer
     cmp-path

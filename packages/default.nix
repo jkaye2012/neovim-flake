@@ -1,6 +1,6 @@
 { pkgs, ... }: with pkgs; rec {
   vimPackages = [
-    nodejs_21
+    nodejs_22
     ripgrep
     tmux
   ];
