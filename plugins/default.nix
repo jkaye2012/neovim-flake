@@ -9,7 +9,6 @@
     nvim-web-devicons
     oil-nvim
     readline-vim
-    rustaceanvim
     telescope-nvim
     vim-easymotion
     vim-wordmotion
