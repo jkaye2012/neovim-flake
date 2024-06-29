@@ -1,15 +1,16 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
+  capabilities = capabilities,
   settings = {
     ['rust-analyzer'] = {},
   },
 }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.html.setup {
   capabilities = capabilities,
