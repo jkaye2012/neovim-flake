@@ -1,5 +1,7 @@
 -- Global editing
 vim.keymap.set('i', '<C-H>', '<C-W>') 
+vim.keymap.set('n', '<C-P>', '<Up>') 
+vim.keymap.set('n', '<C-N>', '<Down>') 
 
 -- Diagnostics
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
