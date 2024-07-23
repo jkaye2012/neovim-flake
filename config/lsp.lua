@@ -1,6 +1,10 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+lspconfig.html.setup {
+  capabilities = capabilities,
+  filetypes = { "html", "htmldjango", "templ" }
+}
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {
