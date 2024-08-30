@@ -1,3 +1,5 @@
+local wk = require("which-key")
+
 -- Global editing
 vim.keymap.set('i', '<C-H>', '<C-W>') 
 vim.keymap.set('n', '<C-P>', '<Up>') 
@@ -11,11 +13,12 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Telescope
 local telescope = require('telescope.builtin')
-vim.keymap.set('n', '<leader>fb', telescope.buffers, {})
-vim.keymap.set('n', '<leader>fc', telescope.commands, {})
-vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
-vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
-vim.keymap.set('n', '<leader>fh', telescope.help_tags, {})
-vim.keymap.set('n', '<leader>fp', telescope.live_grep, {})
-vim.keymap.set('n', '<leader>fr', telescope.lsp_references, {})
-vim.keymap.set('n', '<leader>fs', telescope.lsp_document_symbols, {})
+wk.add({
+  { "<leader>f", group = "find" },
+  { "<leader>fb", telescope.buffers, desc = "buffers" },
+  { "<leader>ff", telescope.find_files, desc = "files" },
+  { "<leader>fg", telescope.live_grep, desc = "grep" },
+  { "<leader>fh", telescope.help_tags, desc = "help" },
+  { "<leader>fr", telescope.lsp_references, desc = "references" },
+  { "<leader>fs", telescope.lsp_document_symbols, desc = "symbol" },
+})
